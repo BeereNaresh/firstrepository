@@ -1,0 +1,251 @@
+
+GIT
+
+GLOBAL INFORMATION TRACKER
+
+
+Steps to commit a file
+----------------------
+1. CREATE A FILE		------> touch filename
+2. NOW ADD THAT FILE		------> git add filename
+3. COMMIT THE FILE WITH MESSAGE	------> git commit -m "TYPE YOUR MESSAGE" filename 
+4.TO SEE THE DETAILS OF THE FILE------> git log
+
+
+
+
+NOW LETS DO IN PRACTICE.....
+
+
+
+1. create a file -----> touch filename
+-----------------------
+create a one directory ad raj.
+under we create file1 , file2.
+
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj
+$ pwd
+/c/Users/GEETASRI/raj
+
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj
+$ touch file1
+
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj
+$ vim file1
+
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj
+$ cat file1
+Hi welcome first file
+for doing git command purpose
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj
+$ vim file2
+
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj
+$ cat file2
+hi welcome to second file
+for git operation
+
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj
+$ ll
+total 2
+-rw-r--r-- 1 GEETASRI 197121 52 Apr 25 11:28 file1
+-rw-r--r-- 1 GEETASRI 197121 45 Apr 25 11:29 file2
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj
+$ ls
+file1  file2
+
+
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj
+
+GIT initialization
+---------------------
+
+$ git init
+Initialized empty Git repository in C:/Users/GEETASRI/raj/.git/
+
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj (master)
+$ ls
+file1  file2
+
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj (master)
+$ ll
+total 2
+-rw-r--r-- 1 GEETASRI 197121 52 Apr 25 11:28 file1
+-rw-r--r-- 1 GEETASRI 197121 45 Apr 25 11:29 file2
+
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj (master)
+$ ls -al
+total 14
+drwxr-xr-x 1 GEETASRI 197121  0 Apr 25 11:32 ./
+drwxr-xr-x 1 GEETASRI 197121  0 Apr 25 11:29 ../
+drwxr-xr-x 1 GEETASRI 197121  0 Apr 25 11:32 .git/
+-rw-r--r-- 1 GEETASRI 197121 52 Apr 25 11:28 file1
+-rw-r--r-- 1 GEETASRI 197121 45 Apr 25 11:29 file2
+
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj (master)
+
+git status
+-------------
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        file1(its appear in red color)
+        file2(its appear in red color)
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj (master)
+
+2. Now add the files to GIT
+---------------------------
+
+$ git add file1
+warning: LF will be replaced by CRLF in file1.
+The file will have its original line endings in your working directory
+
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   file1 (green color)
+
+
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj (master)
+
+$ git add file2
+warning: LF will be replaced by CRLF in file2.
+The file will have its original line endings in your working directory
+
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   file1(green color)
+        new file:   file2(green color)
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj (master)
+$ git commit -m "first commit" file1
+warning: LF will be replaced by CRLF in file1.
+The file will have its original line endings in your working directory
+[master (root-commit) 318ffdf] first commit
+ 1 file changed, 2 insertions(+)
+ create mode 100644 file1
+
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj (master)
+$ git log
+commit 318ffdfb09c8dbaf2cda964251edcb3f2fc7a6df (HEAD -> master)
+Author: GEETHASRI <beere.naresh@gmail.com>
+Date:   Mon Apr 25 11:42:15 2022 -0700
+
+    first commit
+
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj (master)
+
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   file2
+file1 not appeared bcz it is in tracking
+
+
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj (master)
+$ git commit -m "first commit" file2
+warning: LF will be replaced by CRLF in file2.
+The file will have its original line endings in your working directory
+[master c86325b] first commit
+ 1 file changed, 2 insertions(+)
+ create mode 100644 file2
+
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj (master)
+
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+4. To see details of the file
+------------------------------
+git log gives the in formation like file is commited at which
+branch, who is the author, commit ID and in which time file is 
+commited.
+
+$ git log
+commit c86325bb4fb519f7578b952b268cbf92b95a8e8f (HEAD -> master)
+Author: GEETHASRI <beere.naresh@gmail.com>
+Date:   Mon Apr 25 11:44:23 2022 -0700
+
+    first commit
+
+commit 318ffdfb09c8dbaf2cda964251edcb3f2fc7a6df
+Author: GEETHASRI <beere.naresh@gmail.com>
+Date:   Mon Apr 25 11:42:15 2022 -0700
+
+    first commit
+
+
+
+ GIT HUB
+-----------
+
+
+
+
+
+
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj (master)
+$ git remote add origin https://github.com/BeereNaresh/firstrepository.git
+
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj (master)
+$
+
+$ git push -u origin master
+Logon failed, use ctrl+c to cancel basic credential prompt.
+Username for 'https://github.com': BeereNaresh
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: Authentication failed for 'https://github.com/BeereNaresh/firstrepository.git/'
+
+password i.e token
+
+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
+
+
+
+
+GEETASRI@DESKTOP-I7JFJ7D MINGW64 ~/raj (master)
+
+$ git push -u origin master
+Logon failed, use ctrl+c to cancel basic credential prompt.
+Username for 'https://github.com': BeereNaresh
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 546 bytes | 78.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/BeereNaresh/firstrepository/pull/new/master
+remote:
+To https://github.com/BeereNaresh/firstrepository.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+
+
